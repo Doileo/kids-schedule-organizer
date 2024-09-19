@@ -1,38 +1,136 @@
-.App {
-  text-align: center;
+/* Global Styles */
+
+/* Import the font from Google Fonts */
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap");
+
+/* Root Colors */
+:root {
+  --primary-color: hsl(330, 100%, 70%); /* Hot pink */
+  --primary-dark: hsl(330, 100%, 50%); /* Darker pink */
+  --secondary-color: hsl(200, 100%, 80%); /* Light blue */
+  --background-color: hsl(200, 100%, 97%); /* Alice blue */
+  --text-color: hsl(0, 0%, 20%); /* Dark grey for text */
+  --card-background: hsl(0, 0%, 100%); /* White for cards */
+  --border-color: hsl(330, 100%, 70%); /* Pink for borders */
+  --hover-color: hsl(330, 100%, 50%); /* Darker pink for hover effects */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+/* Apply font family and background color */
+body {
+  font-family: "Poppins", sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  line-height: 1.6;
+  padding: 20px;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Global link styles */
+a {
+  color: var(--primary-color);
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Heading styles */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin-bottom: 1rem;
+  font-weight: 600;
+  color: var(--primary-color);
+}
+
+/* Global button styles */
+button {
+  padding: 0.6rem 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background-color: var(--primary-color);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: var(--primary-dark);
+}
+
+/* Container class for layout */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+
+/* Form styles */
+input,
+textarea {
+  width: 100%;
+  padding: 0.8rem;
+  margin: 10px 0;
+  border: 2px solid var(--border-color);
+  border-radius: 5px;
+  font-family: "Poppins", sans-serif;
+}
+
+/* Card styles for activity items */
+.activity-card {
+  background-color: var(--card-background);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  margin-bottom: 20px;
+  padding: 20px;
+}
+
+.activity-card h3 {
+  font-size: 1.4rem;
+  color: var(--primary-color);
+}
+
+.activity-card p {
+  color: hsl(0, 0%, 40%);
+}
+
+/* Toggle view buttons (daily/weekly) */
+.toggle-view {
   display: flex;
-  flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+  margin-bottom: 20px;
+}
+
+.toggle-view button {
+  margin: 0 10px;
+  padding: 0.5rem 1rem;
+  font-weight: bold;
+  background-color: var(--secondary-color);
+}
+
+.toggle-view button.active {
+  background-color: var(--primary-color);
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Responsive design for mobile */
+@media (max-width: 768px) {
+  .container {
+    padding: 10px;
   }
-  to {
-    transform: rotate(360deg);
+
+  button {
+    width: 100%;
   }
 }

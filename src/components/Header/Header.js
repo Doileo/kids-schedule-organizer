@@ -1,7 +1,18 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import "./Header.css";
 
 const Header = () => {
+  const [date, setDate] = useState(() => localStorage.getItem("date") || "");
+  const [week, setWeek] = useState(
+    () => localStorage.getItem("week") || "First week"
+  );
+
+  // Save to localStorage when the input changes
+  useEffect(() => {
+    localStorage.setItem("date", date);
+    localStorage.setItem("week", week);
+  }, [date, week]);
+
   return (
     <header className="header">
       <h1 className="header__title">Daily Routine</h1>
@@ -12,10 +23,13 @@ const Header = () => {
             Day/Date:
           </label>
           <input
-            type="date"
+            type="text"
             id="date"
             className="header__input"
-            aria-label="Select day or date"
+            value={date}
+            onChange={(e) => setDate(e.target.value)}
+            placeholder="Enter date (e.g. 2024-09-19)"
+            aria-label="Enter day or date"
           />
         </div>
 
@@ -24,10 +38,13 @@ const Header = () => {
             Week of:
           </label>
           <input
-            type="week"
+            type="text"
             id="week"
             className="header__input"
-            aria-label="Select week"
+            value={week}
+            onChange={(e) => setWeek(e.target.value)}
+            placeholder={week}
+            aria-label="Enter week"
           />
         </div>
       </div>
