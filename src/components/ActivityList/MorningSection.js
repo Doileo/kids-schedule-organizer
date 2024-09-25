@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./ActivityList.css";
 import sunIcon from "../../assets/icons/sun-icon.svg";
 
@@ -9,6 +9,16 @@ const MorningSection = () => {
   ]);
 
   const [newActivity, setNewActivity] = useState("");
+  const [shine, setShine] = useState(false); // State to control the shine effect
+
+  // Toggle the shine effect
+  useEffect(() => {
+    const shineInterval = setInterval(() => {
+      setShine((prev) => !prev);
+    }, 2000); // Change shine every 2 seconds
+
+    return () => clearInterval(shineInterval); // Cleanup on unmount
+  }, []);
 
   const handleAddActivity = () => {
     if (newActivity.trim()) {
@@ -38,7 +48,11 @@ const MorningSection = () => {
     <section className="routine-section" aria-labelledby="morning-section">
       {/* Morning Header with Sun Icon */}
       <div className="routine-header">
-        <img className="sun-icon" src={sunIcon} alt="Sun Icon" />
+        <img
+          className={`sun-icon ${shine ? "shine" : ""}`} // Add shine class based on state
+          src={sunIcon}
+          alt="Sun Icon"
+        />
         <h2 id="morning-section">Morning Activities</h2>
         <p className="morning-hours">06:00 AM - 12:00 PM</p>
       </div>

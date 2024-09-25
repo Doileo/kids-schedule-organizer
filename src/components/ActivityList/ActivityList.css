@@ -125,7 +125,7 @@
 
 .delete-btn:hover,
 .new-activity button:hover {
-  background-color: var(--hover-color); /* Consistent hover color */
+  background-color: var(--hover-color);
 }
 
 /* Mobile Responsive Styling */
@@ -169,4 +169,32 @@
     font-size: 1rem;
     padding: 10px 18px;
   }
+}
+
+/* Sun Icon Styling */
+.sun-icon {
+  width: 50px;
+  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.sun-icon:hover {
+  transform: scale(1.1); /* Slightly enlarge on hover */
+  filter: brightness(1.2); /* Brighten on hover */
+}
+
+/* Animation for shining effect */
+@keyframes shine {
+  0% {
+    filter: brightness(1);
+  }
+  50% {
+    filter: brightness(1.5);
+  }
+  100% {
+    filter: brightness(1);
+  }
+}
+
+.sun-icon.shine {
+  animation: shine 1.5s infinite; /* Repeat shine animation */
 }
