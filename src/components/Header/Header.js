@@ -7,7 +7,7 @@ const Header = () => {
     () => localStorage.getItem("week") || "First week"
   );
 
-  // Save to localStorage when the input changes
+  // Save to localStorage when input changes
   useEffect(() => {
     localStorage.setItem("date", date);
     localStorage.setItem("week", week);
@@ -23,12 +23,11 @@ const Header = () => {
             Day/Date:
           </label>
           <input
-            type="text"
+            type="date"
             id="date"
             className="header__input"
             value={date}
             onChange={(e) => setDate(e.target.value)}
-            placeholder="Enter date (e.g. 2024-09-19)"
             aria-label="Enter day or date"
           />
         </div>
@@ -37,15 +36,18 @@ const Header = () => {
           <label htmlFor="week" className="header__label">
             Week of:
           </label>
-          <input
-            type="text"
+          <select
             id="week"
             className="header__input"
             value={week}
             onChange={(e) => setWeek(e.target.value)}
-            placeholder={week}
-            aria-label="Enter week"
-          />
+            aria-label="Select week"
+          >
+            <option value="First week">First week</option>
+            <option value="Second week">Second week</option>
+            <option value="Third week">Third week</option>
+            <option value="Fourth week">Fourth week</option>
+          </select>
         </div>
       </div>
     </header>

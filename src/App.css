@@ -3,14 +3,15 @@
 
 /* Root Colors */
 :root {
-  --primary-color: hsl(330, 100%, 70%); /* Hot pink */
-  --primary-dark: hsl(330, 100%, 50%); /* Darker pink */
-  --secondary-color: hsl(200, 100%, 80%); /* Light blue */
-  --background-color: hsl(200, 100%, 97%); /* Alice blue */
-  --text-color: hsl(0, 0%, 20%); /* Dark grey for text */
+  --primary-color: hsl(340, 82%, 52%);
+  --primary-dark: hsl(340, 82%, 42%);
+  --light-pinkish-red: hsl(340, 80%, 90%);
+  --secondary-color: hsl(197, 56%, 42%);
+  --background-color: hsl(210, 36%, 96%); /* Lighter background */
+  --text-color: hsl(0, 0%, 10%); /* Darker text for contrast */
   --card-background: hsl(0, 0%, 100%); /* White for cards */
-  --border-color: hsl(330, 100%, 70%); /* Pink for borders */
-  --hover-color: hsl(330, 100%, 50%); /* Darker pink for hover effects */
+  --border-color: hsl(340, 82%, 52%); /* Accessible pink for borders */
+  --hover-color: hsl(340, 82%, 42%); /* Darker hover effect */
 }
 
 /* Reset some default styles */
@@ -48,7 +49,7 @@ h5,
 h6 {
   margin-bottom: 1rem;
   font-weight: 600;
-  color: var(--primary-color);
+  color: var(--primary-dark);
 }
 
 section {
@@ -99,11 +100,11 @@ textarea {
 
 .activity-card h3 {
   font-size: 1.4rem;
-  color: var(--primary-color);
+  color: var(--primary-dark);
 }
 
 .activity-card p {
-  color: hsl(0, 0%, 40%);
+  color: hsl(0, 0%, 35%);
 }
 
 /* Toggle view buttons (daily/weekly) */

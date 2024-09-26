@@ -9,15 +9,13 @@ const MorningSection = () => {
   ]);
 
   const [newActivity, setNewActivity] = useState("");
-  const [shine, setShine] = useState(false); // State to control the shine effect
+  const [shine, setShine] = useState(false);
 
   // Toggle the shine effect
   useEffect(() => {
-    const shineInterval = setInterval(() => {
-      setShine((prev) => !prev);
-    }, 2000); // Change shine every 2 seconds
+    const shineInterval = setInterval(() => setShine((prev) => !prev), 2000);
 
-    return () => clearInterval(shineInterval); // Cleanup on unmount
+    return () => clearInterval(shineInterval);
   }, []);
 
   const handleAddActivity = () => {
@@ -26,7 +24,7 @@ const MorningSection = () => {
         ...activities,
         { id: activities.length + 1, name: newActivity, completed: false },
       ]);
-      setNewActivity(""); // Reset the input
+      setNewActivity("");
     }
   };
 
@@ -46,10 +44,9 @@ const MorningSection = () => {
 
   return (
     <section className="routine-section" aria-labelledby="morning-section">
-      {/* Morning Header with Sun Icon */}
       <div className="routine-header">
         <img
-          className={`sun-icon ${shine ? "shine" : ""}`} // Add shine class based on state
+          className={`sun-icon ${shine ? "shine" : ""}`}
           src={sunIcon}
           alt="Sun Icon"
         />
@@ -57,7 +54,6 @@ const MorningSection = () => {
         <p className="morning-hours">06:00 AM - 12:00 PM</p>
       </div>
 
-      {/* Activities List */}
       <ul className="activity-list">
         {activities.map((activity) => (
           <li
@@ -84,7 +80,6 @@ const MorningSection = () => {
         ))}
       </ul>
 
-      {/* New Activity Input */}
       <div className="new-activity">
         <input
           type="text"
