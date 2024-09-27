@@ -186,6 +186,25 @@
   animation: shine 1.5s infinite; /* Repeat shine animation */
 }
 
+/* Animation for floating effect */
+@keyframes float {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+/* Apply float animation to the afternoon section icon */
+.float-icon {
+  width: 50px;
+  animation: float 3s ease-in-out infinite;
+}
+
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .activity-item {
