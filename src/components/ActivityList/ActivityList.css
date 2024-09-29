@@ -205,6 +205,25 @@
   animation: float 3s ease-in-out infinite;
 }
 
+/* Moon Icon Styling */
+.moon-icon {
+  width: 50px;
+  animation: moon-phase 2s ease-in-out infinite; /* Repeat moon phase animation */
+}
+
+/* Animation for moon phase effect */
+@keyframes moon-phase {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1); /* Slightly enlarge */
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .activity-item {
