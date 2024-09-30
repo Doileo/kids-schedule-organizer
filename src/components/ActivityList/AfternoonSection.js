@@ -47,43 +47,47 @@ const AfternoonSection = () => {
         <p className="afternoon-hours">12:00 PM - 06:00 PM</p>
       </div>
 
-      <ul className="activity-list">
-        {activities.map((activity) => (
-          <li
-            key={activity.id}
-            className={`activity-item ${activity.completed ? "completed" : ""}`}
-          >
-            <label>
-              <input
-                type="checkbox"
-                checked={activity.completed}
-                onChange={() => handleToggleComplete(activity.id)}
-                aria-label={`Mark ${activity.name} as complete`}
-              />
-              {activity.name}
-            </label>
-            <button
-              className="delete-btn"
-              onClick={() => handleDeleteActivity(activity.id)}
-              aria-label={`Delete ${activity.name}`}
+      <div className="activity-container">
+        <ul className="activity-list">
+          {activities.map((activity) => (
+            <li
+              key={activity.id}
+              className={`activity-item ${
+                activity.completed ? "completed" : ""
+              }`}
             >
-              Delete
-            </button>
-          </li>
-        ))}
-      </ul>
+              <label>
+                <input
+                  type="checkbox"
+                  checked={activity.completed}
+                  onChange={() => handleToggleComplete(activity.id)}
+                  aria-label={`Mark ${activity.name} as complete`}
+                />
+                {activity.name}
+              </label>
+              <button
+                className="delete-btn"
+                onClick={() => handleDeleteActivity(activity.id)}
+                aria-label={`Delete ${activity.name}`}
+              >
+                Delete
+              </button>
+            </li>
+          ))}
+        </ul>
 
-      <div className="new-activity">
-        <input
-          type="text"
-          value={newActivity}
-          onChange={(e) => setNewActivity(e.target.value)}
-          placeholder="Add a new activity"
-          aria-label="New activity input"
-        />
-        <button className="add-activity-button" onClick={handleAddActivity}>
-          Add
-        </button>
+        <div className="new-activity">
+          <input
+            type="text"
+            value={newActivity}
+            onChange={(e) => setNewActivity(e.target.value)}
+            placeholder="Add a new activity"
+            aria-label="New activity input"
+          />
+          <button className="add-activity-button" onClick={handleAddActivity}>
+            Add
+          </button>
+        </div>
       </div>
     </section>
   );
