@@ -6,7 +6,7 @@ import "./ActivityList.css";
 
 const ActivityList = () => {
   return (
-    <div className="activity-list">
+    <div className="activity-sections">
       <MorningSection />
       <AfternoonSection />
       <EveningSection />
