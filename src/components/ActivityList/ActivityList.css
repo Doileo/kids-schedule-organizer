@@ -200,19 +200,6 @@
   }
 }
 
-/* Animation for moon phase effect */
-@keyframes moon-phase {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(1.1); /* Slightly enlarge */
-  }
-  100% {
-    transform: scale(1);
-  }
-}
-
 /* Layout Adjustments for Tablet Screens */
 @media (min-width: 768px) {
   .header__input {
@@ -278,17 +265,63 @@
   }
 }
 
-/* Responsive adjustments for larger screens */
+/* Media Queries for Desktop */
 @media (min-width: 1024px) {
   .activity-sections {
-    grid-template-columns: repeat(3, 1fr);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* Create three columns */
+    gap: 2rem;
+  }
+
+  .routine-section {
+    grid-template-columns: none;
+    overflow: hidden;
+    margin: 0 auto;
+  }
+
+  .routine-header {
+    padding: 20px;
+  }
+
+  .sun-icon,
+  .float-icon,
+  .moon-icon {
+    width: 60px;
+  }
+
+  .activity-item {
+    padding: 1.5rem;
+  }
+
+  /* Larger Checkbox Styling */
+  .activity-item input[type="checkbox"] {
+    width: 24px;
+    height: 24px;
+  }
+
+  .new-activity {
+    flex-direction: row;
+    gap: 16px;
   }
 
   .new-activity input[type="text"] {
-    font-size: 20px;
+    font-size: 16px;
   }
 
   .new-activity button {
-    font-size: 18px;
+    font-size: 16px;
+  }
+}
+
+@media (min-width: 1200px) {
+  .activity-sections {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem;
+  }
+
+  .routine-section {
+    grid-template-columns: none;
+    overflow: hidden;
   }
 }
