@@ -1,4 +1,5 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import { AnimationContext } from "../../contexts/AnimationContext"; // Adjust path accordingly
 import "./Header.css";
 
 const Header = () => {
@@ -6,12 +7,17 @@ const Header = () => {
   const [week, setWeek] = useState(
     () => localStorage.getItem("week") || "First week"
   );
+  const { animationsEnabled, setAnimationsEnabled } =
+    useContext(AnimationContext);
 
-  // Save to localStorage when input changes
   useEffect(() => {
     localStorage.setItem("date", date);
     localStorage.setItem("week", week);
   }, [date, week]);
+
+  const handleToggle = () => {
+    setAnimationsEnabled((prev) => !prev);
+  };
 
   return (
     <header className="header">
@@ -48,6 +54,20 @@ const Header = () => {
             <option value="Third week">Third week</option>
             <option value="Fourth week">Fourth week</option>
           </select>
+        </div>
+
+        <div>
+          <label className="toggle">
+            <input
+              type="checkbox"
+              checked={animationsEnabled}
+              onChange={handleToggle}
+              aria-label="Toggle animations"
+            />
+            <span className="slider"></span>{" "}
+            {/* Slider for the toggle effect */}
+            Enable Animations
+          </label>
         </div>
       </div>
     </header>

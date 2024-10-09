@@ -131,6 +131,16 @@ textarea {
   color: white;
 }
 
+/* Global Animation States */
+.animated {
+  transition: all 0.3s ease-in-out;
+}
+
+/* When animations are disabled */
+.animations-disabled .animated {
+  transition: none; /* Disable transitions */
+}
+
 /* Responsive design for mobile */
 @media (max-width: 768px) {
   .container {

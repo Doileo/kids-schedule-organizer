@@ -40,6 +40,51 @@
   width: 100%;
 }
 
+/* Toggle container styling */
+.toggle {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hidden checkbox */
+.toggle input {
+  display: none;
+}
+
+/* The slider (custom styling for the toggle switch) */
+.slider {
+  width: 34px;
+  height: 20px;
+  background-color: var(--light-pinkish-red);
+  border-radius: 34px;
+  position: relative;
+  transition: background-color 0.4s;
+}
+
+/* The round slider (the toggle button) */
+.slider::before {
+  content: "";
+  position: absolute;
+  width: 16px;
+  height: 16px;
+  left: 2px;
+  bottom: 2px;
+  background-color: white;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+
+/* Change the background color when the toggle is checked */
+.toggle input:checked + .slider {
+  background-color: var(--primary-color);
+}
+
+/* Move the toggle button when checked */
+.toggle input:checked + .slider::before {
+  transform: translateX(14px);
+}
+
 @media (min-width: 768px) {
   .header {
     flex-direction: row;

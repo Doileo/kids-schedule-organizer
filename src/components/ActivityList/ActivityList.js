@@ -1,12 +1,19 @@
-import React from "react";
+import React, { useContext } from "react";
+import { AnimationContext } from "../../contexts/AnimationContext";
 import MorningSection from "./MorningSection";
 import AfternoonSection from "./AfternoonSection";
 import EveningSection from "./EveningSection";
 import "./ActivityList.css";
 
 const ActivityList = () => {
+  const { animationsEnabled } = useContext(AnimationContext); // Access the context
+
   return (
-    <div className="activity-sections">
+    <div
+      className={`activity-sections ${
+        animationsEnabled ? "" : "animations-disabled"
+      }`}
+    >
       <MorningSection />
       <AfternoonSection />
       <EveningSection />
