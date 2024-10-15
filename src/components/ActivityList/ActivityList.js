@@ -1,5 +1,4 @@
 import React, { useContext } from "react";
-import { AnimationContext } from "../../contexts/AnimationContext";
 import MorningSection from "./MorningSection";
 import AfternoonSection from "./AfternoonSection";
 import EveningSection from "./EveningSection";

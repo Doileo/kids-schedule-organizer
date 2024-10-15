@@ -1,6 +1,6 @@
-import React, { useState, useEffect } from "react";
-import "./ActivityList.css";
+import React, { useState } from "react";
 import sunIcon from "../../assets/icons/sun-icon.svg";
+import "./ActivityList.css";
 
 const MorningSection = () => {
   const [activities, setActivities] = useState([
@@ -9,32 +9,32 @@ const MorningSection = () => {
   ]);
 
   const [newActivity, setNewActivity] = useState("");
-  const [shine, setShine] = useState(false);
 
-  // Toggle the shine effect
-  useEffect(() => {
-    const shineInterval = setInterval(() => setShine((prev) => !prev), 2000);
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
 
-    return () => clearInterval(shineInterval);
-  }, []);
+  const shine = !prefersReducedMotion ? "shine" : "";
 
   const handleAddActivity = () => {
     if (newActivity.trim()) {
-      setActivities([
-        ...activities,
-        { id: activities.length + 1, name: newActivity, completed: false },
+      setActivities((prevActivities) => [
+        ...prevActivities,
+        { id: prevActivities.length + 1, name: newActivity, completed: false },
       ]);
       setNewActivity("");
     }
   };
 
   const handleDeleteActivity = (id) => {
-    setActivities(activities.filter((activity) => activity.id !== id));
+    setActivities((prevActivities) =>
+      prevActivities.filter((activity) => activity.id !== id)
+    );
   };
 
   const handleToggleComplete = (id) => {
-    setActivities(
-      activities.map((activity) =>
+    setActivities((prevActivities) =>
+      prevActivities.map((activity) =>
         activity.id === id
           ? { ...activity, completed: !activity.completed }
           : activity
@@ -46,7 +46,7 @@ const MorningSection = () => {
     <section className="routine-section" aria-labelledby="morning-section">
       <div className="routine-header">
         <img
-          className={`sun-icon ${shine ? "shine" : ""}`}
+          className={`sun-icon ${shine}`} // Apply shine effect based on preferences
           src={sunIcon}
           alt="Sun Icon"
         />

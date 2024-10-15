@@ -137,12 +137,12 @@
 /* Sun Icon Styling */
 .sun-icon {
   width: 50px;
-  transition: transform 0.3s ease, filter 0.3s ease; /* Smooth transition for hover effect */
+  transition: transform 0.3s ease, filter 0.3s ease;
 }
 
 .sun-icon:hover {
-  transform: scale(1.1); /* Slightly enlarge on hover */
-  filter: brightness(1.2); /* Brighten on hover */
+  transform: scale(1.1);
+  filter: brightness(1.2);
 }
 
 /* Animation for shining effect */
@@ -159,7 +159,29 @@
 }
 
 .sun-icon.shine {
-  animation: shine 1.5s infinite; /* Repeat shine animation */
+  animation: shine 1.5s infinite;
+}
+
+/* Sharing Animation Styles */
+@keyframes share {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.sun-icon.share {
+  animation: share 0.5s infinite;
+}
+
+/* Optional: Add sharing effect on hover */
+.sun-icon:hover.share {
+  animation: none;
 }
 
 /* Animation for floating effect */
@@ -197,6 +219,17 @@
   }
   100% {
     transform: scale(1);
+  }
+}
+
+/* Reduce motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .sun-icon.shine,
+  .sun-icon.share,
+  .float-icon,
+  .moon-icon {
+    animation: none; /* Disable animations */
+    transition: none; /* Disable transitions for hover effects */
   }
 }
 
@@ -269,9 +302,8 @@
 @media (min-width: 1024px) {
   .activity-sections {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    align-items: start;
-    gap: 2.75rem;
+    grid-template-columns: repeat(3, 1fr); /* Create three columns */
+    gap: 2rem;
   }
 
   .routine-section {
@@ -281,7 +313,7 @@
   }
 
   .routine-header {
-    padding: 10px;
+    padding: 20px;
   }
 
   .sun-icon,
@@ -294,15 +326,10 @@
     padding: 1.5rem;
   }
 
-  label {
-    gap: 0.75rem;
-  }
-
   /* Larger Checkbox Styling */
   .activity-item input[type="checkbox"] {
     width: 24px;
     height: 24px;
-    flex-shrink: 0;
   }
 
   .new-activity {

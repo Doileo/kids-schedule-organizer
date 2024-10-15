@@ -1,18 +1,18 @@
 import React from "react";
-import { AnimationProvider } from "./contexts/AnimationContext"; // Import AnimationProvider
 import Header from "./components/Header/Header";
+import MorningSection from "./components/ActivityList/MorningSection";
+import AfternoonSection from "./components/ActivityList/AfternoonSection";
+import EveningSection from "./components/ActivityList/EveningSection";
 import "./App.css";
-import ActivityList from "./components/ActivityList/ActivityList";
 
 const App = () => {
   return (
-    <AnimationProvider>
-      {/* Use the AnimationProvider's context directly */}
-      <div className="app">
-        <Header />
-        <ActivityList />
-      </div>
-    </AnimationProvider>
+    <div className="App">
+      <Header />
+      <MorningSection />
+      <AfternoonSection />
+      <EveningSection />
+    </div>
   );
 };
 

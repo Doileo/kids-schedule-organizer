@@ -41,48 +41,61 @@
 }
 
 /* Toggle container styling */
-.toggle {
+.header__toggle {
   display: flex;
   align-items: center;
   cursor: pointer;
 }
 
 /* Hidden checkbox */
-.toggle input {
-  display: none;
+.header__toggle-input {
+  display: none; /* Hide the actual checkbox */
 }
 
 /* The slider (custom styling for the toggle switch) */
-.slider {
-  width: 34px;
-  height: 20px;
-  background-color: var(--light-pinkish-red);
-  border-radius: 34px;
-  position: relative;
-  transition: background-color 0.4s;
+.header__toggle-slider {
+  width: 34px; /* Width of the toggle */
+  height: 20px; /* Height of the toggle */
+  background-color: var(--light-pinkish-red); /* Background color when off */
+  border-radius: 34px; /* Rounded corners */
+  position: relative; /* Positioning context for the button */
+  transition: background-color 0.4s; /* Smooth background color transition */
 }
 
 /* The round slider (the toggle button) */
-.slider::before {
-  content: "";
+.header__toggle-slider::before {
+  content: ""; /* Creates a circular toggle button */
   position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 2px;
-  bottom: 2px;
-  background-color: white;
-  border-radius: 50%;
-  transition: transform 0.4s;
+  width: 16px; /* Width of the toggle button */
+  height: 16px; /* Height of the toggle button */
+  left: 2px; /* Start position on the left */
+  bottom: 2px; /* Align to the bottom */
+  background-color: white; /* Color of the toggle button */
+  border-radius: 50%; /* Make it round */
+  transition: transform 0.4s; /* Smooth movement */
 }
 
 /* Change the background color when the toggle is checked */
-.toggle input:checked + .slider {
+.header__toggle-input:checked + .header__toggle-slider {
   background-color: var(--primary-color);
 }
 
 /* Move the toggle button when checked */
-.toggle input:checked + .slider::before {
+.header__toggle-input:checked + .header__toggle-slider::before {
   transform: translateX(14px);
+}
+
+/* Focus and hover styles */
+.header__toggle-input:focus + .header__toggle-slider {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--light-pinkish-red); /* Custom focus effect */
+}
+
+.header__toggle-slider:hover {
+  background-color: lighten(
+    var(--primary-color),
+    10%
+  ); /* Change color on hover */
 }
 
 @media (min-width: 768px) {

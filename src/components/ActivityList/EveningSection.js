@@ -1,33 +1,40 @@
-import React, { useState } from "react";
-import "./ActivityList.css";
+import React, { useState } from "react"; // Remove useEffect import
 import moonIcon from "../../assets/icons/nightlight.svg";
+import "./ActivityList.css";
 
 const EveningSection = () => {
   const [activities, setActivities] = useState([
     { id: 1, name: "Dinner", completed: false },
     { id: 2, name: "Reading", completed: false },
-    { id: 3, name: "Prepare for bed", completed: false },
   ]);
 
   const [newActivity, setNewActivity] = useState("");
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const glow = !prefersReducedMotion ? "glow" : "";
+
   const handleAddActivity = () => {
     if (newActivity.trim()) {
-      setActivities([
-        ...activities,
-        { id: activities.length + 1, name: newActivity, completed: false },
+      setActivities((prevActivities) => [
+        ...prevActivities,
+        { id: prevActivities.length + 1, name: newActivity, completed: false },
       ]);
       setNewActivity("");
     }
   };
 
   const handleDeleteActivity = (id) => {
-    setActivities(activities.filter((activity) => activity.id !== id));
+    setActivities((prevActivities) =>
+      prevActivities.filter((activity) => activity.id !== id)
+    );
   };
 
   const handleToggleComplete = (id) => {
-    setActivities(
-      activities.map((activity) =>
+    setActivities((prevActivities) =>
+      prevActivities.map((activity) =>
         activity.id === id
           ? { ...activity, completed: !activity.completed }
           : activity
@@ -38,9 +45,13 @@ const EveningSection = () => {
   return (
     <section className="routine-section" aria-labelledby="evening-section">
       <div className="routine-header">
-        <img className="moon-icon" src={moonIcon} alt="Moon Icon" />
+        <img
+          className={`moon-icon ${glow}`} // Apply glow effect based on preferences
+          src={moonIcon}
+          alt="Moon Icon"
+        />
         <h2 id="evening-section">Evening Activities</h2>
-        <p className="evening-hours">06:00 PM - 12:00 AM</p>
+        <p className="evening-hours">06:00 PM - 10:00 PM</p>
       </div>
 
       <div className="activity-container">

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState } from "react"; // Remove useEffect import
 import "./ActivityList.css";
 import sunCloudIcon from "../../assets/icons/cloudly-icon.svg";
 
@@ -11,23 +11,31 @@ const AfternoonSection = () => {
 
   const [newActivity, setNewActivity] = useState("");
 
+  const prefersReducedMotion = window.matchMedia(
+    "(prefers-reduced-motion: reduce)"
+  ).matches;
+
+  const float = !prefersReducedMotion ? "float" : ""; // Handle animation based on preference
+
   const handleAddActivity = () => {
     if (newActivity.trim()) {
-      setActivities([
-        ...activities,
-        { id: activities.length + 1, name: newActivity, completed: false },
+      setActivities((prevActivities) => [
+        ...prevActivities,
+        { id: prevActivities.length + 1, name: newActivity, completed: false },
       ]);
       setNewActivity("");
     }
   };
 
   const handleDeleteActivity = (id) => {
-    setActivities(activities.filter((activity) => activity.id !== id));
+    setActivities((prevActivities) =>
+      prevActivities.filter((activity) => activity.id !== id)
+    );
   };
 
   const handleToggleComplete = (id) => {
-    setActivities(
-      activities.map((activity) =>
+    setActivities((prevActivities) =>
+      prevActivities.map((activity) =>
         activity.id === id
           ? { ...activity, completed: !activity.completed }
           : activity
@@ -39,7 +47,7 @@ const AfternoonSection = () => {
     <section className="routine-section" aria-labelledby="afternoon-section">
       <div className="routine-header">
         <img
-          className="float-icon"
+          className={`float-icon ${float}`} // Apply float effect based on preferences
           src={sunCloudIcon}
           alt="Sun with Cloud Icon"
         />
