@@ -119,3 +119,23 @@
     flex-direction: column;
   }
 }
+
+@media (min-width: 1600px) {
+  .header {
+    padding: 2rem;
+  }
+
+  .header__title {
+    margin-bottom: 0;
+  }
+
+  .header__label {
+    font-size: 1.125rem;
+  }
+
+  #date.header__input,
+  #week.header__input {
+    padding: 0.9rem 3rem;
+    font-size: 1rem;
+  }
+}

@@ -77,13 +77,6 @@ button:hover {
   background-color: var(--hover-color);
 }
 
-/* Container class for layout */
-.container {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 20px;
-}
-
 /* Form styles */
 input,
 textarea {
@@ -149,5 +142,12 @@ textarea {
 
   button {
     width: 100%;
+  }
+}
+
+@media (min-width: 1600px) {
+  .App {
+    max-width: 1400px;
+    margin: 0 auto;
   }
 }
