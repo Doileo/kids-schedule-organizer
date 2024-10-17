@@ -1,4 +1,9 @@
 /* General Container for Morning, Afternoon, and Evening Sections */
+.activity-sections {
+  display: grid;
+  gap: 1.5rem;
+}
+
 .routine-section {
   display: grid;
   gap: 1rem;
@@ -17,7 +22,7 @@
   justify-content: center;
   border: 2px solid var(--border-color);
   border-radius: 8px;
-  padding: 10px;
+  padding: 1rem;
 }
 
 .morning-header,
@@ -46,19 +51,18 @@
 .morning-header p,
 .afternoon-header p,
 .evening-header p {
-  font-size: 16px;
+  font-size: 1rem;
   color: hsl(0, 0%, 35%);
 }
 
 /* Activity List Styles */
 .activity-list {
   padding: 2rem 0;
-  background-color: var(--background-color);
   border-radius: 8px;
   list-style: none;
   display: grid;
   grid-template-columns: 1fr;
-  gap: 20px;
+  gap: 1.25rem;
 }
 
 /* Activity Item Styles */
@@ -66,9 +70,9 @@
   display: flex;
   justify-content: space-between;
   align-items: center;
-  gap: 1rem;
-  padding: 1.5rem;
-  background-color: var(--card-background);
+  gap: 1.5rem;
+  padding: 1rem;
+  background-color: var(--background-color);
   border-radius: 8px;
   margin-bottom: 12px;
   box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
@@ -80,24 +84,36 @@
   transform: scale(1.02);
 }
 
+label {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.delete-btn {
+  width: 50%;
+  background-color: var(--secondary-color);
+}
+
 /* Larger Checkbox Styling */
 .activity-item input[type="checkbox"] {
-  width: 20px;
-  height: 20px;
+  width: 25px;
+  height: 25px;
 }
 
 /* Add New Activity Section */
 .new-activity {
   display: flex;
-  gap: 16px;
+  gap: 1rem;
 }
 
 .new-activity input[type="text"] {
   flex-grow: 1;
-  padding: 12px;
+  padding: 14px;
   border: 1px solid var(--border-color);
   border-radius: 8px;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .new-activity button {
@@ -108,7 +124,7 @@
   border-radius: 8px;
   cursor: pointer;
   transition: background-color 0.3s ease;
-  font-size: 16px;
+  font-size: 1rem;
 }
 
 .new-activity button:hover {
@@ -131,7 +147,7 @@
 
 .toggle-view button.active {
   background-color: var(--primary-color);
-  color: white;
+  color: var(--card-background);
 }
 
 /* Sun Icon Styling */
@@ -271,7 +287,7 @@
 
   .activity-sections {
     grid-template-columns: repeat(2, 1fr);
-    gap: 30px;
+    gap: 1.875rem;
   }
 
   label {
@@ -334,15 +350,12 @@
 
   .new-activity {
     flex-direction: row;
-    gap: 16px;
+    gap: 1rem;
   }
 
-  .new-activity input[type="text"] {
-    font-size: 16px;
-  }
-
+  .new-activity input[type="text"],
   .new-activity button {
-    font-size: 16px;
+    font-size: 1rem;
   }
 }
 

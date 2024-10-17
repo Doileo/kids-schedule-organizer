@@ -5,7 +5,7 @@ import "./ActivityList.css";
 const MorningSection = () => {
   const [activities, setActivities] = useState([
     { id: 1, name: "Make Bed", completed: false },
-    { id: 2, name: "Oatmeal Breakfast", completed: false },
+    { id: 2, name: "Breakfast", completed: false },
   ]);
 
   const [newActivity, setNewActivity] = useState("");
