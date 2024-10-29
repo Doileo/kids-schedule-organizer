@@ -344,6 +344,7 @@ label {
   .activity-sections {
     display: flex;
     flex-direction: row;
+    gap: 0.75rem;
   }
 
   .routine-section {
