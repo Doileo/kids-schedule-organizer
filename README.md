@@ -15,6 +15,9 @@ This project is a chance to enhance my React skills while building a practical t
     - [What I Learned](#what-i-learned)
     - [Continued Development](#continued-development)
     - [Useful Resources](#useful-resources)
+  - [Installation Instructions](#installation-instructions)
+  - [Dependencies](#dependencies)
+  - [Usage Instructions](#usage-instructions)
 
 ## Overview
 
@@ -76,3 +79,59 @@ Future improvements may include:
 - **[MDN Web Docs - CSS Animations](https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_Animations/Using_CSS_animations)**: An in-depth guide on keyframes, transitions, and best practices for animations.
 - **[React Documentation - State and Lifecycle](https://reactjs.org/docs/state-and-lifecycle.html)**: An overview of state and lifecycle in React components, essential for managing component behavior.
 - **[Prefers-Reduced-Motion in CSS - MDN](https://developer.mozilla.org/en-US/docs/Web/CSS/@media/prefers-reduced-motion)**: This article explains how to use `prefers-reduced-motion` to respect user preferences, allowing you to toggle animations based on motion preferences.
+
+## Installation Instructions
+
+To set up the Kids' Schedule Organizer on your local machine, follow these steps:
+
+1. Clone the repository:
+
+   ```bash
+   git clone https://github.com/yourusername/kids-schedule-organizer.git
+
+   ```
+
+2. Navigate to the project directory:
+   ```bash
+   cd kids-schedule-organizer
+   ```
+3. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+
+## Dependencies
+
+The project relies on the following dependencies:
+
+- **React**: Core library for building the user interface.
+- **React Router**: Used for navigating between different sections.
+- **Local Storage**: For persisting selected date and week across sessions.
+
+These dependencies are essential for the app's functionality, enabling the addition, deletion, and management of scheduled tasks for each time of day.
+
+## Usage Instructions
+
+1. **Run the app**:
+   start the app by running the following command in your terminal:
+
+```bash
+npm start
+```
+
+This will launch the app on http://localhost:3000.
+
+2. **Choose a Date and Week**:
+
+- Use the header controls to select a specific date and week. These choices are saved to local storage, so they persist between sessions.
+
+3. **Manage Tasks**:
+
+- **Add**: Enter a new activity in the input box and click "Add" to create a new task for the selected time section.
+- **Mark as Done**: Check the box next to a task to mark it as completed.
+- **Delete**: Use the "Delete" button next to each activity to remove it.
+
+4. **Navigate the Schedule**:
+
+- The app is divided into three main sections: Morning, Afternoon, and Evening.
+- Each section has unique animated icons and time slots, making it easier to categorize and manage daily tasks.
