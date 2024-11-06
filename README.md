@@ -18,6 +18,9 @@ This project is a chance to enhance my React skills while building a practical t
   - [Installation Instructions](#installation-instructions)
   - [Dependencies](#dependencies)
   - [Usage Instructions](#usage-instructions)
+  - [Project Structure](#project-structure)
+    - [Key Files](#key-files)
+  - [Author](#author)
 
 ## Overview
 
@@ -135,3 +138,31 @@ This will launch the app on http://localhost:3000.
 
 - The app is divided into three main sections: Morning, Afternoon, and Evening.
 - Each section has unique animated icons and time slots, making it easier to categorize and manage daily tasks.
+
+## Project Structure
+
+- `src/`
+  - `assets/`: Contains the icons and screenshots used in the project.
+  - `components/`: Contains React components for the schedule organizer.
+    - `ActivityList/`: Contains components related to listing activities for different times of the day.
+    - `Header/`: Contains the header for the application.
+  - `App.js`: Main application component that sets up the application and includes the core logic.
+  - `App.css`: The main stylesheet for styling the application.
+  - `hooks/` (unused): Created for custom React hooks but not in use currently.
+  - `utils/` (unused): Intended for utility functions but not implemented yet.
+  - `DailyView/` (unused): Designed for a potential view but not part of the current project.
+  - `WeeklyView/` (unused): Designed for a potential view but not part of the current project.
+- `public/`
+  - `index.html`: The main HTML file for the project.
+
+### Key Files
+
+- **`App.js`**: Manages the rendering of components and application logic.
+- **`App.css`**: Contains the global styles for the application.
+- **`ActivityList/`**: Contains the components for displaying activities in the morning, afternoon, and evening.
+- **`Header/`**: Contains the header section of the application.
+
+## Author
+
+- LinkedIn - [@Doina](https://www.linkedin.com/in/doinaleovchindeveloper/)
+- GitHub - [@Doileo](https://github.com/Doileo)
