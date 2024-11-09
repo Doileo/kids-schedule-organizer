@@ -12,11 +12,6 @@
   --card-background: hsl(0, 0%, 100%); /* White for cards */
   --border-color: hsl(340, 82%, 52%); /* Accessible pink for borders */
   --hover-color: hsl(340, 82%, 42%); /* Darker hover effect */
-
-  --sun-color: yellow;
-  --sun-hover-color: orange;
-  --moon-color: #fff;
-  --moon-hover-color: #f1c40f;
 }
 
 /* Reset some default styles */
