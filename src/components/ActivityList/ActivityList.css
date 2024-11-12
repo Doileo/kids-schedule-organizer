@@ -330,13 +330,13 @@ label {
   .new-activity input[type="text"] {
     font-size: 17px;
     padding: 12px;
-    width: 60%;
+    width: 100%;
   }
 
   .new-activity button {
     font-size: 18px;
     padding: 12px;
-    width: 40%;
+    width: 100%;
   }
 }
 
