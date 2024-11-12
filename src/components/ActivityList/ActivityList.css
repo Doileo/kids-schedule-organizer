@@ -376,7 +376,6 @@ label {
   }
 
   .new-activity {
-    flex-direction: row;
     gap: 1rem;
   }
 
