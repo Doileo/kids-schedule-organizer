@@ -105,6 +105,7 @@ label {
 /* Add New Activity Section */
 .new-activity {
   display: flex;
+  flex-direction: column;
   gap: 1rem;
 }
 
