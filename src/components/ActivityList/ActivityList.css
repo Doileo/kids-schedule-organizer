@@ -396,9 +396,7 @@ label {
     grid-template-columns: none;
     overflow: hidden;
   }
-}
 
-@media (min-width: 1600px) {
   .activity-container {
     width: 100%;
   }
